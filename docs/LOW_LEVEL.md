@@ -3,7 +3,7 @@
 ## Signature validation
 
 - Route uses `express.raw({ type: "application/json" })`.
-- I pass raw bytes and `stripe-signature` to `stripe.webhooks.constructEvent`.
+- Raw bytes and `stripe-signature` are passed to `stripe.webhooks.constructEvent`.
 - Any verification failure returns `400 Invalid Stripe signature`.
 
 ## Idempotency enforcement
@@ -14,7 +14,7 @@
 
 ## Processing claim
 
-To avoid double-processing, I claim an event atomically:
+To avoid double-processing, events are claimed atomically:
 
 ```sql
 UPDATE webhook_events

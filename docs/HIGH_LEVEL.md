@@ -2,16 +2,16 @@
 
 ## Objective
 
-I need to process Stripe webhooks without losing events and without processing the same event twice downstream.
+Process Stripe webhooks without losing events and without duplicate downstream execution.
 
 ## Reliability model
 
-I treat Stripe webhook intake and downstream processing as two separate concerns:
+Stripe webhook intake and downstream processing are treated as separate concerns:
 
 1. Intake must be authentic and durable.
 2. Processing must be idempotent and retry-safe.
 
-Because I persist first, a transient downstream outage cannot drop events.
+Because persistence happens before processing, transient downstream outages cannot drop events.
 
 ## Key guarantees
 

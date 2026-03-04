@@ -1,17 +1,17 @@
 # Stripe Webhook Reliability Service
 
-I built this service to make Stripe webhook handling safe and repeatable in production. It protects downstream systems from duplicate processing, preserves every received event, and retries transient failures with backoff.
+This service provides durable, idempotent Stripe webhook processing for production environments. It is designed to prevent dropped events, block duplicate downstream execution, and recover cleanly from transient failures.
 
-## What this service guarantees
+## Core guarantees
 
-- I verify every webhook with Stripe signature validation.
-- I persist every valid event before processing.
-- I enforce idempotency by unique Stripe `event.id`.
-- I process each event at most once in steady state.
-- I retry transient downstream failures from persisted state.
-- I expose structured operational visibility through logs and `/health`.
+- Stripe signature verification on every webhook request.
+- Persistent event storage before downstream processing.
+- Idempotency enforcement by unique Stripe `event.id`.
+- Replay-safe processing with atomic event claiming.
+- Exponential-backoff retries for transient failures.
+- Operational visibility through structured logs and `/health`.
 
-## Stack
+## Technology stack
 
 - Node.js 20+
 - Express
@@ -22,17 +22,17 @@ I built this service to make Stripe webhook handling safe and repeatable in prod
 - GitHub Actions CI
 - Docker + Docker Compose
 
-## Quick start (local)
+## Local quick start
 
 1. Install dependencies:
 ```bash
 npm install
 ```
-2. Create local environment config:
+2. Create environment file:
 ```bash
 cp .env.example .env
 ```
-3. Run the service:
+3. Start the service:
 ```bash
 npm run dev
 ```
@@ -41,51 +41,56 @@ npm run dev
 curl http://localhost:3000/health
 ```
 
-## Test commands
+## Quality commands
 
-- Run all tests: `npm test`
-- Unit only: `npm run test:unit`
-- Integration only: `npm run test:integration`
+- Full test suite: `npm test`
+- Unit tests: `npm run test:unit`
+- Integration tests: `npm run test:integration`
 - Lint: `npm run lint`
 - Build: `npm run build`
 
-## Docker
+## Docker workflow
 
 1. Build and run:
 ```bash
 docker compose up --build
 ```
-2. Check health:
+2. Validate health endpoint:
 ```bash
 curl http://localhost:3000/health
 ```
 
-## Stripe webhook test flow
+## Stripe webhook simulation flow
 
 1. Start Stripe CLI forwarding:
 ```bash
 stripe listen --forward-to localhost:3000/webhooks/stripe
 ```
-2. Set `STRIPE_WEBHOOK_SECRET` in `.env` from CLI output.
+2. Set `.env` `STRIPE_WEBHOOK_SECRET` from Stripe CLI output.
 3. Trigger a test event:
 ```bash
 stripe trigger payment_intent.succeeded
 ```
 
-## Manual replay of failed events
+## Manual replay
 
-If an event reaches `failed` status, I can requeue and replay it:
+Failed events can be requeued and replayed:
 
 ```bash
 npm run replay -- evt_123456789
 ```
 
-## Documentation map
+## Documentation index
 
-- [Live demo and cold-start fallback](docs/LIVE_DEMO.md)
+- [Live demo and fallback walkthrough](docs/LIVE_DEMO.md)
 - [High-level architecture](docs/HIGH_LEVEL.md)
 - [Mid-level implementation map](docs/MID_LEVEL.md)
 - [Low-level behavior and state transitions](docs/LOW_LEVEL.md)
 - [Operations runbook](docs/OPERATIONS.md)
-- [Testing strategy and commands](docs/TESTING.md)
-- [Project changelog](docs/CHANGELOG.md)
+- [Testing strategy](docs/TESTING.md)
+- [Changelog](docs/CHANGELOG.md)
+
+## Delivery tracking
+
+- GitHub project: `https://github.com/users/MSulSal/projects/4`
+- Milestone issues: `https://github.com/MSulSal/stripe-webhook-reliability-service/issues`

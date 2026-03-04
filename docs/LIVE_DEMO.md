@@ -1,17 +1,22 @@
 # Live Demo
 
+## Delivery tracking
+
+- Project board: `https://github.com/users/MSulSal/projects/4`
+- Milestone issues: `#1` to `#9` in this repository
+
 ## Public health endpoint
 
 - Planned public URL: `https://stripe-webhook-reliability-service.onrender.com/health`
 - Current local URL: `http://localhost:3000/health`
 
-I prepared deployment artifacts (`Dockerfile`, `render.yaml`, CI workflow) so I can publish quickly once hosting account access is available.
+Deployment artifacts (`Dockerfile`, `render.yaml`, CI workflow) are prepared for publication once hosting account access is available.
 
 ## Cold-start fallback walkthrough
 
 - Walkthrough video placeholder: `https://www.loom.com/share/REPLACE_WITH_PUBLISHED_VIDEO_ID`
 
-I will publish this as a short runbook recording that shows:
+The fallback walkthrough video should cover:
 
 1. Cloning the repository.
 2. Creating `.env`.

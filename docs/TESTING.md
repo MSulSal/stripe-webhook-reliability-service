@@ -2,7 +2,7 @@
 
 ## Test scope
 
-I cover both behavior layers:
+Coverage includes both behavior layers:
 
 - Unit tests for signature verification and processing state transitions.
 - Integration tests for the full webhook HTTP path.
