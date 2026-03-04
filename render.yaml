@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: stripe-webhook-reliability-service
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: LOG_LEVEL
+        value: info
+      - key: DATABASE_PATH
+        value: /app/data/webhooks.db
+      - key: DOWNSTREAM_MODE
+        value: log
+      - key: MAX_PROCESSING_ATTEMPTS
+        value: 6
+      - key: RETRY_BASE_DELAY_MS
+        value: 2000
+      - key: RETRY_MAX_DELAY_MS
+        value: 60000
+      - key: RETRY_POLL_INTERVAL_MS
+        value: 2000
+      - key: RETRY_BATCH_SIZE
+        value: 20
+      - key: DOWNSTREAM_TIMEOUT_MS
+        value: 5000
+      - key: STRIPE_API_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
