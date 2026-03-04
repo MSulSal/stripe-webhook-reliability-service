@@ -7,27 +7,25 @@
 
 ## Public health endpoint
 
-- Planned public URL: `https://webhooks.yourdomain.com/health`
+- Planned public URL: `https://stripe-webhook-reliability-service-production.up.railway.app/health`
 - Current local URL: `http://localhost:3000/health`
 
-Deployment artifacts and Oracle deployment instructions are prepared for publication.
+Deployment artifacts are published and running on Railway.
 
 ## Deployment checkpoints
 
-1. Oracle VM is created with static public IP.
-2. DNS `A` record points domain to OCI IP.
-3. HTTPS reverse proxy is active.
-4. Stripe endpoint is configured with production URL.
+1. Railway service is deployed from `main`.
+2. Persistent volume is mounted at `/app/data`.
+3. Environment variables are configured in Railway.
+4. Stripe endpoint is configured with production webhook URL.
 5. `/health` is publicly accessible.
 
-## Cold-start fallback walkthrough
+## Validation walkthrough
 
-- Walkthrough video placeholder: `https://www.loom.com/share/REPLACE_WITH_PUBLISHED_VIDEO_ID`
+Reviewer validation flow:
 
-The fallback walkthrough video should cover:
-
-1. Cloning the repository.
-2. Creating `.env`.
-3. Starting with Docker.
-4. Sending a Stripe test webhook.
-5. Verifying deduplication and `/health`.
+1. Open `https://stripe-webhook-reliability-service-production.up.railway.app/health` and confirm `status: "ok"`.
+2. In Stripe Dashboard, send a test event to the production endpoint.
+3. Confirm webhook delivery is `2xx` in Stripe.
+4. Resend the same event from Stripe Events to validate duplicate handling.
+5. Verify logs and `/health` event counters reflect expected processing state.

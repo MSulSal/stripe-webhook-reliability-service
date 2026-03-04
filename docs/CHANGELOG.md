@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2] - 2026-03-04
+
+### Updated
+
+- `docs/LIVE_DEMO.md` now reflects Railway as the active deployment target.
+- Replaced walkthrough video placeholder with a full written reviewer walkthrough.
+
 ## [1.0.1] - 2026-03-04
 
 ### Added
