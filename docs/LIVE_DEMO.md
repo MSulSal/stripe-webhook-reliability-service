@@ -7,10 +7,18 @@
 
 ## Public health endpoint
 
-- Planned public URL: `https://stripe-webhook-reliability-service.onrender.com/health`
+- Planned public URL: `https://webhooks.yourdomain.com/health`
 - Current local URL: `http://localhost:3000/health`
 
-Deployment artifacts (`Dockerfile`, `render.yaml`, CI workflow) are prepared for publication once hosting account access is available.
+Deployment artifacts and Oracle deployment instructions are prepared for publication.
+
+## Deployment checkpoints
+
+1. Oracle VM is created with static public IP.
+2. DNS `A` record points domain to OCI IP.
+3. HTTPS reverse proxy is active.
+4. Stripe endpoint is configured with production URL.
+5. `/health` is publicly accessible.
 
 ## Cold-start fallback walkthrough
 

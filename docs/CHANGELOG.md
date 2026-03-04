@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.0.1] - 2026-03-04
+
+### Added
+
+- Beginner-safe Oracle Always Free deployment runbook:
+  - `docs/DEPLOY_ORACLE_FREE.md`
+- Formal delivery tracking and lessons-learned document:
+  - `docs/DELIVERY_NOTES.md`
+
+### Updated
+
+- `README.md` documentation index with deployment and delivery-note links.
+- `docs/OPERATIONS.md` deployment-path handoff to Oracle runbook.
+- `docs/LIVE_DEMO.md` hosting target and deployment checkpoints.
+
 ## [1.0.0] - 2026-03-04
 
 ### Added
