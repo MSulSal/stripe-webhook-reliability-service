@@ -6,6 +6,7 @@
 
 - `docs/LIVE_DEMO.md` now reflects Railway as the active deployment target.
 - Replaced walkthrough video placeholder with a full written reviewer walkthrough.
+- Updated live demo health endpoint label from planned to live.
 
 ## [1.0.1] - 2026-03-04
 

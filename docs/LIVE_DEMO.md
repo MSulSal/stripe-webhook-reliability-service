@@ -7,7 +7,7 @@
 
 ## Public health endpoint
 
-- Planned public URL: `https://stripe-webhook-reliability-service-production.up.railway.app/health`
+- Live public URL: `https://stripe-webhook-reliability-service-production.up.railway.app/health`
 - Current local URL: `http://localhost:3000/health`
 
 Deployment artifacts are published and running on Railway.
