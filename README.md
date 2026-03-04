@@ -83,7 +83,6 @@ npm run replay -- evt_123456789
 ## Documentation index
 
 - [Live demo and fallback walkthrough](docs/LIVE_DEMO.md)
-- [Oracle Always Free deployment guide](docs/DEPLOY_ORACLE_FREE.md)
 - [High-level architecture](docs/HIGH_LEVEL.md)
 - [Mid-level implementation map](docs/MID_LEVEL.md)
 - [Low-level behavior and state transitions](docs/LOW_LEVEL.md)

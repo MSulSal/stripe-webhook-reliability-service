@@ -19,7 +19,7 @@ This document tracks execution decisions, constraints, and lessons learned durin
 ## Delivery hurdles and mitigations
 
 1. Free-hosting platforms commonly constrain persistent local storage and always-on workers.
-Mitigation: delivered the live deployment on Railway with persistent volume support and retained Oracle VM runbook coverage for self-hosted deployment.
+Mitigation: delivered the live deployment on Railway with persistent volume support and operational safeguards.
 
 2. Webhook reliability can degrade if signature verification and persistence are loosely coupled.
 Mitigation: designed request flow to verify signature, persist event, and process from durable state.
@@ -28,7 +28,7 @@ Mitigation: designed request flow to verify signature, persist event, and proces
 Mitigation: enforced unique Stripe event IDs and duplicate short-circuit behavior.
 
 4. Non-technical deployment operators need explicit infrastructure sequencing.
-Mitigation: created an end-to-end beginner-safe Oracle deployment guide with validation checkpoints.
+Mitigation: documented an end-to-end validation walkthrough with explicit checkpoints for reviewers.
 
 ## Lessons learned
 

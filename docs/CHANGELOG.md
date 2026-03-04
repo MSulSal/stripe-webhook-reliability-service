@@ -1,12 +1,19 @@
 # Changelog
 
+## [1.0.4] - 2026-03-04
+
+### Updated
+
+- Removed legacy platform-specific deployment references from public documentation.
+- Removed the legacy platform-specific deployment guide from the public docs set.
+
 ## [1.0.3] - 2026-03-04
 
 ### Updated
 
 - `docs/DELIVERY_NOTES.md` now reflects completed delivery status and final deployment outcome.
 - `docs/LIVE_DEMO.md` delivery tracking now marks milestone issues as closed.
-- `docs/OPERATIONS.md` deployment references now separate live Railway validation from Oracle VM self-host guidance.
+- `docs/OPERATIONS.md` deployment references now align with live Railway validation and runtime operations.
 
 ## [1.0.2] - 2026-03-04
 
@@ -20,15 +27,13 @@
 
 ### Added
 
-- Beginner-safe Oracle Always Free deployment runbook:
-  - `docs/DEPLOY_ORACLE_FREE.md`
 - Formal delivery tracking and lessons-learned document:
   - `docs/DELIVERY_NOTES.md`
 
 ### Updated
 
 - `README.md` documentation index with deployment and delivery-note links.
-- `docs/OPERATIONS.md` deployment-path handoff to Oracle runbook.
+- `docs/OPERATIONS.md` deployment-path handoff to runtime operations guidance.
 - `docs/LIVE_DEMO.md` hosting target and deployment checkpoints.
 
 ## [1.0.0] - 2026-03-04
