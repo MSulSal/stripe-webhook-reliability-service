@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3] - 2026-03-04
+
+### Updated
+
+- `docs/DELIVERY_NOTES.md` now reflects completed delivery status and final deployment outcome.
+- `docs/LIVE_DEMO.md` delivery tracking now marks milestone issues as closed.
+- `docs/OPERATIONS.md` deployment references now separate live Railway validation from Oracle VM self-host guidance.
+
 ## [1.0.2] - 2026-03-04
 
 ### Updated

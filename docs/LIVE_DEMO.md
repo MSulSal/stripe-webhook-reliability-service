@@ -3,7 +3,7 @@
 ## Delivery tracking
 
 - Project board: `https://github.com/users/MSulSal/projects/4`
-- Milestone issues: `#1` to `#9` in this repository
+- Milestone issues: `#1` to `#9` in this repository (closed)
 
 ## Public health endpoint
 

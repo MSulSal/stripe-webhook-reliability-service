@@ -19,7 +19,7 @@ This document tracks execution decisions, constraints, and lessons learned durin
 ## Delivery hurdles and mitigations
 
 1. Free-hosting platforms commonly constrain persistent local storage and always-on workers.
-Mitigation: selected Oracle Always Free deployment path for process continuity and durable local storage.
+Mitigation: delivered the live deployment on Railway with persistent volume support and retained Oracle VM runbook coverage for self-hosted deployment.
 
 2. Webhook reliability can degrade if signature verification and persistence are loosely coupled.
 Mitigation: designed request flow to verify signature, persist event, and process from durable state.
@@ -43,6 +43,8 @@ Mitigation: created an end-to-end beginner-safe Oracle deployment guide with val
 - Integration tests validate signature handling, idempotency, and persistence behavior.
 - Operational runbook includes replay procedures and failure recovery.
 
-## Current open execution item
+## Delivery status
 
-- Publish production live demo URL and fallback walkthrough link, then close final delivery issue.
+- Public live demo endpoint is available and documented.
+- Milestone issue sequence is closed.
+- Documentation set is complete for build, test, operations, and deployment validation.

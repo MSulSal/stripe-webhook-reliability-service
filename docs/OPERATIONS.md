@@ -1,8 +1,9 @@
 # Operations Runbook
 
-## Deployment path
+## Deployment references
 
-- Primary deployment guide: `docs/DEPLOY_ORACLE_FREE.md`
+- Live deployment validation and URL: `docs/LIVE_DEMO.md`
+- VM self-hosted deployment guide: `docs/DEPLOY_ORACLE_FREE.md`
 - This runbook focuses on runtime operations after deployment is complete.
 
 ## Environment variables
